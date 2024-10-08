@@ -1,23 +1,22 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
 import leaf from '../../assets/Projects/leaf.png';
 import emotion from "../../assets/Projects/emotion.png";
 import editor from "../../assets/Projects/codeEditor.png";
 import chatify from "../../assets/Projects/chatify.png";
 import suicide from "../../assets/Projects/suicide.png";
 import bitsOfCode from "../../assets/Projects/blog.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Projects() {
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          My Recent <strong className="purple">Works</strong>
         </h1>
-        <p style={{ color: "white" }}>
+        <p style={{ color: "white", textAlign: "center" }}>
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>

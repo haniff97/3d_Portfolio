@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import {
   SiVisualstudiocode,
   SiPostman,
@@ -7,10 +7,10 @@ import {
   SiVercel,
   SiMacos,
 } from "react-icons/si";
-
-function Toolstack() {
+function Techstack() {
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Container>
+      <Row className="center tech-row" style={{ paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
         <SiMacos />
       </Col>
@@ -26,8 +26,9 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons">
         <SiVercel />
       </Col>
-    </Row>
+      </Row>
+    </Container>
   );
 }
 
-export default Toolstack;
+export default Techstack;

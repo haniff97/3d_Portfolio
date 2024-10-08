@@ -1,34 +1,51 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import laptopImg from "/src/assets/about.png"; // Adjust the path as needed
+import Techstack from "./Techstack";
+import Aboutcard from "./AboutCard";
+import laptopImg from "/src/assets/about.png";
+import Toolstack from "./Toolstack";
+import EarthCanvas from "../canvas/Earth";
 
-function Projects() {
+function About() {
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="about-section">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={laptopImg}
-              isBlog={false}
-              title="Project Title"
-              description="Project Description"
-              link="#"
-            />
+        <Row style={{ justifyContent: "center", padding: "10px" }}>
+          <Col
+            md={7}
+            style={{
+              justifyContent: "center",
+              paddingTop: "30px",
+              paddingBottom: "50px",
+            }}
+          >
+            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+              Know Who <strong className="purple">I'M</strong>
+            </h1>
+            <Aboutcard />
           </Col>
-          {/* Add more <Col> elements with <ProjectCard> components as needed */}
+          <Col
+            md={5}
+            style={{ paddingTop: "10px", paddingBottom: "50px" }}
+          >
+            <EarthCanvas />
+          </Col>
         </Row>
+        <h1 className="project-heading" style={{ textAlign: "center" }}>
+          Professional <strong className="purple">Skillset</strong>
+        </h1>
+
+        <Techstack />
+
+        <h1 className="project-heading" style={{ textAlign: "center" }}>
+          <strong className="purple">Tools</strong> I use
+        </h1>
+        <Toolstack />
       </Container>
     </Container>
   );
 }
 
-export default Projects;
+export default About;

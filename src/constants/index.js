@@ -29,23 +29,28 @@ import {
     {
       id: "info",
       title: "Home",
+      path: "/hero",
     },
     {
       id: "about",
       title: "About",
+      path: "/about",
     },
     {
       id: "project",
       title: "Project",
+      path: "/projects",
     },
     {
       id: "resume",
       title: "Resume",
+      path: "/resume",
     },
-    {
-      id: "blog",
-      title: "Blog",
-    },
+    // {
+    //   id: "blog",
+    //   title: "Blog",
+    //   path: "/blog",
+    // },
   ];
   
   const services = [
