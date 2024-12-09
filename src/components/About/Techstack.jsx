@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import { TbBrandCSharp } from "react-icons/tb";
-import { SiExpress } from "react-icons/si";
+import { SiExpress, SiFlutter, SiKotlin } from "react-icons/si";
 import {
   DiJavascript1,
   DiReact,
@@ -54,6 +54,12 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiNextdotjs />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiKotlin />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiFlutter />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiGit />

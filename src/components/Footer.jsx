@@ -20,7 +20,7 @@ function Footer() {
           <ul className="footer-icons" style={{ display: 'flex', justifyContent: 'flex-end', listStyleType: 'none', padding: 0, margin: 0 }}>
             <li className="social-icons" style={{ margin: '0 10px' }}>
               <a
-                href="https://github.com/soumyajit4419"
+                href="https://github.com/haniff97"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -30,7 +30,7 @@ function Footer() {
             </li>
             <li className="social-icons" style={{ margin: '0 10px' }}>
               <a
-                href="https://twitter.com/Soumyajit4419"
+                href="https://x.com/H4nif5"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -40,7 +40,7 @@ function Footer() {
             </li>
             <li className="social-icons" style={{ margin: '0 10px' }}>
               <a
-                href="https://www.linkedin.com/in/soumyajit4419/"
+                href="https://www.linkedin.com/in/haniffhamdan97/"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -50,7 +50,7 @@ function Footer() {
             </li>
             <li className="social-icons" style={{ margin: '0 10px' }}>
               <a
-                href="https://www.instagram.com/soumyajit4419"
+                href="https://www.instagram.com/han.1ff/"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
