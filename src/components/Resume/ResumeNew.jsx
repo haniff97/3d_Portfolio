@@ -18,7 +18,7 @@ function ResumeNew() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const pdfFile = "src/assets/Haniff-Resume.pdf";
+  const pdfFile = "/Haniff-Resume.pdf";
 
   return (
     <div>
@@ -36,22 +36,22 @@ function ResumeNew() {
         </Row>
 
       <Row style={{ justifyContent: "center", position: "relative" }}>
-        <Button
+      <Button
           variant="primary"
-          href={pdfFile}
+          href="/Haniff-Resume.pdf"  // Ensure this is the correct path
           target="_blank"
           style={{
             maxWidth: "162px",
-            display: "flex",            // Enables flexbox
-            alignItems: "center",       // Centers content vertically
-            justifyContent: "center",   // Centers content horizontally
-            gap: "8px",                 // Adds space between icon and text
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "8px",
           }}
-          >
-            <AiOutlineDownload />
-            <span>Download CV</span>
-          </Button>
-
+        >
+          <AiOutlineDownload />
+          <span>Download CV</span>
+        </Button>
+        
         </Row>
       </Container>
     </div>

@@ -10,10 +10,9 @@ function AboutCard() {
           <p style={{ textAlign: "justify" }}>
             Hi Everyone, I am <span className="purple">Haniff Hamdan </span>
             <br />
-            I am currently employed as a software developer.
+            Interested in crafting innovative solutions across web, mobile, 
             <br />
-            I have completed Electronic (Computer Systems) Engineering at
-            Universiti Malaysia Pahang (UMP).
+             and backend systems. Always eager to explore new technologies and push boundaries!.
             <br />
           </p>
           <br/>

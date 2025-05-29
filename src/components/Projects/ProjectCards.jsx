@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
+import { SiNotion } from "react-icons/si";
 
 function ProjectCards(props) {
   return (
@@ -13,22 +14,25 @@ function ProjectCards(props) {
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <Button
-            variant="primary"
-            href={props.ghLink}
-            target="_blank"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              textAlign: 'center',
-              paddingLeft: '10px',
-            }}
-          >
-            <BsGithub style={{ marginRight: '8px' }} />
-            {props.isBlog ? "Blog" : "GitHub"}
-          </Button>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            {props.ghLink && (
+              <Button
+                variant="primary"
+                href={props.ghLink}
+                target="_blank"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  paddingLeft: '10px',
+                }}
+              >
+                <BsGithub style={{ marginRight: '8px' }} />
+                {props.isBlog ? "Blog" : "GitHub"}
+              </Button>
+            )}
+
           {!props.isBlog && props.demoLink && (
             <Button
               variant="primary"
@@ -44,6 +48,24 @@ function ProjectCards(props) {
             >
               <CgWebsite style={{ marginRight: '8px' }} />
               {"Demo"}
+            </Button>
+          )}
+
+          {props.notionLink && (
+            <Button
+              variant="dark"
+              href={props.notionLink}
+              target="_blank"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                paddingLeft: '10px',
+              }}
+            >
+              <SiNotion style={{ marginRight: '8px' }} />
+              {"Notion"}
             </Button>
           )}
         </div>

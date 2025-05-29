@@ -9,13 +9,16 @@ const Info = () => {
     <div className='min-h-screen flex flex-col justify-between'>
       <motion.p 
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-24 text-secondary text-[13px] max-w-3xl mx-auto px-5 lg:ml-10'
+        className='mt-24 text-secondary text-[13px] max-w-[90%] mx-auto px-5 lg:ml-10'
+        style={{
+          wordWrap: 'break-word',
+          textAlign: 'center',
+        }}
       >
-        Hi there! I am currently working as a full-stack developer specialising in Java and C#. <br/>
-        This project serves as a showcase for my learning journey in React.js and other technologies.<br/> 
+        Hi there! I am currently working as a full-stack developer specializing in Java and C#. <br />
+        This project serves as a showcase for my learning journey in React.js and other technologies. <br /> 
         I aim to turn it into a long-term project by continuously updating it with new features and design tweaks.
       </motion.p>
-      
       <motion.div 
         variants={textVariant()}
         className='flex flex-col lg:flex-row justify-between w-full px-5 pt-20 lg:pt-40 lg:absolute'
