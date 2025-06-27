@@ -47,6 +47,7 @@ const Info = () => {
             <p>sql</p>
             <p>C#</p>
             <p>C++</p>
+            <p>Kotlin</p>
             <p>swift</p>
           </div>
         </div>

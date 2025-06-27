@@ -5,14 +5,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-grey': '#2D2D2D',
-        primary: "#050816",
-        secondary: "##cbc7c6",
-        tertiary: "#151030",
-        white:"#fff",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "##cbc7c6",
+        'dark-grey': '#23272F',
+        'light-grey': '#F3F4F6',
+        primary: '#23272F',
+        secondary: '#CBC7C6',
+        tertiary: '#3A3F47',
+        white: '#FFFFFF',
+        'black-100': '#181A1B',
+        'black-200': '#101214',
+        'white-100': '#F3F4F6',
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

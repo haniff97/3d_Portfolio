@@ -18,6 +18,7 @@ function ProjectCards(props) {
             {props.ghLink && (
               <Button
                 variant="primary"
+                className="github-btn"
                 href={props.ghLink}
                 target="_blank"
                 style={{
@@ -54,6 +55,7 @@ function ProjectCards(props) {
           {props.notionLink && (
             <Button
               variant="dark"
+              className="notion-btn"
               href={props.notionLink}
               target="_blank"
               style={{

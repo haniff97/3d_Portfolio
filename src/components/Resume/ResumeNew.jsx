@@ -41,7 +41,7 @@ function ResumeNew() {
           href="/Haniff-Resume.pdf"  // Ensure this is the correct path
           target="_blank"
           style={{
-            maxWidth: "162px",
+            maxWidth: "182px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
