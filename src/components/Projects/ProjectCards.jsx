@@ -9,30 +9,30 @@ function ProjectCards(props) {
   return (
     <Card className="project-card-view">
       <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
+      <Card.Body style={{ display: "flex", flexDirection: "column" }}>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
+        <Card.Text style={{ textAlign: "justify", flexGrow: 1 }}>
           {props.description}
         </Card.Text>
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            {props.ghLink && (
-              <Button
-                variant="primary"
-                className="github-btn"
-                href={props.ghLink}
-                target="_blank"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  paddingLeft: '10px',
-                }}
-              >
-                <BsGithub style={{ marginRight: '8px' }} />
-                {props.isBlog ? "Blog" : "GitHub"}
-              </Button>
-            )}
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: 'auto' }}>
+          {props.ghLink && (
+            <Button
+              variant="primary"
+              className="github-btn"
+              href={props.ghLink}
+              target="_blank"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                paddingLeft: '10px',
+              }}
+            >
+              <BsGithub style={{ marginRight: '8px' }} />
+              {props.isBlog ? "Blog" : "GitHub"}
+            </Button>
+          )}
 
           {!props.isBlog && props.demoLink && (
             <Button
