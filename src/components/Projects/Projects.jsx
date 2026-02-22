@@ -34,7 +34,7 @@ function Projects() {
             />
           </Col> */}
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={Robot}
               isBlog={false}
@@ -45,7 +45,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={ecommerce}
               isBlog={false}
@@ -56,7 +56,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={Figma}
               isBlog={false}
@@ -67,7 +67,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={iOS}
               isBlog={false}
@@ -78,7 +78,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={Android}
               isBlog={false}
@@ -89,7 +89,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={Server}
               isBlog={false}
@@ -111,7 +111,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col xs={12} sm={6} md={4} className="project-card">
             <ProjectCard
               imgPath={emotion}
               isBlog={false}

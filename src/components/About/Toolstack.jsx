@@ -7,27 +7,36 @@ import {
   SiVercel,
   SiMacos,
 } from "react-icons/si";
+
 function Techstack() {
   return (
-    <Container>
-      <Row className="center tech-row justify-content-center" style={{ paddingBottom: "50px" }}>
-      <Col xs={4} sm={3} md={2} className="tech-icons mb-3">
-        <SiMacos />
+    <Row className="center tech-row justify-content-center" style={{ paddingBottom: "50px" }}>
+      <Col xs={4} sm={3} md={2} className="mb-3 d-flex justify-content-center">
+        <div className="tech-icons">
+          <SiMacos />
+        </div>
       </Col>
-      <Col xs={4} sm={3} md={2} className="tech-icons mb-3">
-        <SiVisualstudiocode />
+      <Col xs={4} sm={3} md={2} className="mb-3 d-flex justify-content-center">
+        <div className="tech-icons">
+          <SiVisualstudiocode />
+        </div>
       </Col>
-      <Col xs={4} sm={3} md={2} className="tech-icons mb-3">
-        <SiPostman />
+      <Col xs={4} sm={3} md={2} className="mb-3 d-flex justify-content-center">
+        <div className="tech-icons">
+          <SiPostman />
+        </div>
       </Col>
-      {/* <Col xs={4} sm={3} md={2} className="tech-icons mb-3">
-        <SiSlack />
+      {/* <Col xs={4} sm={3} md={2} className="mb-3 d-flex justify-content-center">
+        <div className="tech-icons">
+          <SiSlack />
+        </div>
       </Col>
-      <Col xs={4} sm={3} md={2} className="tech-icons mb-3">
-        <SiVercel />
+      <Col xs={4} sm={3} md={2} className="mb-3 d-flex justify-content-center">
+        <div className="tech-icons">
+          <SiVercel />
+        </div>
       </Col> */}
-      </Row>
-    </Container>
+    </Row>
   );
 }
 
