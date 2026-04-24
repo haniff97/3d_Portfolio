@@ -8,6 +8,9 @@ import Figma from "../../assets/Projects/Figma.png";
 import iOS from "../../assets/Projects/iOS.png";
 import Android from "../../assets/Projects/Android.png";
 import Server from "../../assets/Projects/Server.png";
+import helmdeck from "../../assets/Projects/helmdeck.jpeg";
+import iot from "../../assets/Projects/iot.jpeg";
+import laravel from "../../assets/Projects/laravel.png";
 // import suicide from "../../assets/Projects/suicide.png";
 // import bitsOfCode from "../../assets/Projects/blog.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -97,6 +100,38 @@ function Projects() {
               description="Monitoring server system dashboard featuring IoT using Prometheus, MQTT, and Gemini."
               notionLink="https://hazel-bronze-469.notion.site/Server-Homelab-30e4bc74dab480a2a766e205f2a599cc"
               ghLink="https://github.com/haniff97/Server_Dashboard.git"
+            />
+          </Col>
+
+          <Col xs={12} sm={6} md={4} className="project-card">
+            <ProjectCard
+              imgPath={iot}
+              isBlog={false}
+              title="IoT Switch"
+              description="Monitoring Electric Output follow Malaysia tariff TnB and swith on/off on the dashboard"
+              notionLink="https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555"
+              ghLink="https://github.com/haniff97/Server_Dashboard.git"
+            />
+          </Col>
+
+          <Col xs={12} sm={6} md={4} className="project-card">
+            <ProjectCard
+              imgPath={helmdeck}
+              isBlog={false}
+              title="HelmDeck Git Monitor"
+              description="Hybrid concept using GCP as entry point (Nginx) to my private homelab running on Orange Pi 4 Pro with K3s, Postgres (NVMe), Redis, and NestJS API via encrypted Tailscale tunnel, plus React dashboard and custom GitHub Actions runner for CI/CD."
+              notionLink="https://www.notion.so/HelmDeck-Git-Monitor-34c4bc74dab480c79a94eda6accbc52a"
+              ghLink="https://github.com/haniff97/helmdeck-frontend"
+            />
+          </Col>
+
+          <Col xs={12} sm={6} md={4} className="project-card">
+            <ProjectCard
+              imgPath={laravel}
+              isBlog={false}
+              title="Task Manager (Laravel)"
+              description="Task Management System using Laravel with proper ui design and database. The system is used to manage task and project."
+              ghLink="https://github.com/haniff97/Task-Manager.git"
             />
           </Col>
 
