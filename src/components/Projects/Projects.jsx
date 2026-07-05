@@ -11,6 +11,8 @@ import Server from "../../assets/Projects/Server.png";
 import helmdeck from "../../assets/Projects/helmdeck.jpeg";
 import iot from "../../assets/Projects/iot.jpeg";
 import laravel from "../../assets/Projects/laravel.png";
+import agent from "../../assets/Projects/agent.png";
+import AWSIot from "../../assets/Projects/AWSIot.png";
 // import suicide from "../../assets/Projects/suicide.png";
 // import bitsOfCode from "../../assets/Projects/blog.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -132,6 +134,36 @@ function Projects() {
               title="Task Manager (Laravel)"
               description="Task Management System using Laravel with proper ui design and database. The system is used to manage task and project."
               ghLink="https://github.com/haniff97/Task-Manager.git"
+            />
+          </Col>
+
+          <Col xs={12} sm={6} md={4} className="project-card">
+            <ProjectCard
+              imgPath={AWSIot}
+              isBlog={false}
+              title="AWS IoT"
+              description="Design a pipeline AWS bridges a local edge network (Orange Pi) with the AWS Cloud, enabling dynamic cost ."
+              notionLink="https://hazel-bronze-469.notion.site/AWS-IoT-3944bc74dab480fba0efcf4000c1fab3?pvs=143"
+            />
+          </Col>
+
+          <Col xs={12} sm={6} md={4} className="project-card">
+            <ProjectCard
+              imgPath={laravel}
+              isBlog={false}
+              title="AWS CI/CD Pipeline"
+              description="Demonstrates modern cloud engineering practices by migrating a bare-metal application to a serverless AWS architecture."
+              notionLink="https://app.notion.com/p/AWS-CI-CD-pipeline-3944bc74dab48040922fc976e341d218"
+            />
+          </Col>
+
+          <Col xs={12} sm={6} md={4} className="project-card">
+            <ProjectCard
+              imgPath={agent}
+              isBlog={false}
+              title="Infra Agent Monitoring"
+              description="Developed an autonomous, human-in-the-loop Site Reliability Engineering (SRE) agent that monitors infrastructure telemetry, diagnoses anomalies using Gemini API"
+              notionLink="https://app.notion.com/p/Infra-Agent-3944bc74dab4806fbed2d2f7cf233ca9"
             />
           </Col>
 
