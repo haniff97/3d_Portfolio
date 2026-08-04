@@ -90,24 +90,36 @@ const PWave = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     const clock = new Clock();
+    let animationFrameId;
 
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
       planeMaterial.uniforms.uTime.value = elapsedTime;
       renderer.render(scene, camera);
-      window.requestAnimationFrame(animate);
+      animationFrameId = window.requestAnimationFrame(animate);
     };
 
     animate();
 
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       sizes.width = window.innerWidth;
       sizes.height = window.innerHeight;
       camera.aspect = sizes.width / sizes.height;
       camera.updateProjectionMatrix();
       renderer.setSize(sizes.width, sizes.height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', handleResize);
+      renderer.dispose();
+      planeGeometry.dispose();
+      planeMaterial.dispose();
+      scene.clear();
+    };
   }, []);
 
   return <canvas ref={canvasRef} className="webgl"></canvas>;

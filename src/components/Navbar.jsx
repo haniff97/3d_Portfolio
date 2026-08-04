@@ -88,7 +88,7 @@ const Navbar = () => {
               transition={{ duration: 0.5, delay: navLinks.length * 0.1 }}
               className="relative text-secondary hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300"
             >
-              <a href="http://35.230.24.195:8086/" target="_blank" rel="noopener noreferrer">Blog</a>
+              <a href="http://35.230.24.195/" target="_blank" rel="noopener noreferrer">Blog</a>
             </motion.li>
           </ul>
         </div>
@@ -132,7 +132,7 @@ const Navbar = () => {
                 className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-300"
                 onClick={() => setToggle(false)}
               >
-                <a href="http://35.230.24.195:8086/" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="http://35.230.24.195/" target="_blank" rel="noopener noreferrer">Blog</a>
               </motion.li>
             </ul>
           </motion.div>
