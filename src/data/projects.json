@@ -1,0 +1,88 @@
+[
+  {
+    "title": "Inspection Robot",
+    "description": "This is my FYP project which is building a 'Inspection Pipe Robot'. The robot can expand and shrink automaticly using obsorber from rc car. Its feature a gps, camera with 6 led, and timing belt to better griped in pipe. The whole body is fabricated using 3D print..",
+    "ghLink": "https://github.com/haniff97/GPS-and-GSM-with-thingsboard.git",
+    "id": "inspection-robot",
+    "image": "Projects/Robot.png"
+  },
+  {
+    "title": "E-Commerce",
+    "description": "While building it, i learned about xampp and wordpress plug in for e-commerce applications. Such as woocommerce, domain, and the tool for ui design.",
+    "id": "e-commerce",
+    "image": "Projects/ecommerce.png"
+  },
+  {
+    "title": "Figma Design",
+    "description": "This project is to understand and simplyfly NFT market app. Inspired by 'Opensea' website and dark mood feature trend. The UI is easy for new people to try enter in NFT world.",
+    "id": "figma-design",
+    "image": "Projects/Figma.png"
+  },
+  {
+    "title": "iOS Project",
+    "description": "A showcase of iOS applications built with Swift, featuring clean UI/UX, local database integration, and responsive design. Developed as part of my journey to become a mobile developer.",
+    "notionLink": "https://www.notion.so/iOS-Project-1fb4bc74dab480a5bf4ada90211d0ba8",
+    "id": "ios-project",
+    "image": "Projects/iOS.png"
+  },
+  {
+    "title": "Android Project",
+    "description": "A set of Android applications developed during my journey into mobile development, showcasing UI design, local data handling, and modern Android practices",
+    "notionLink": "https://www.notion.so/Android-Project-1ff4bc74dab480369ccaefd33e7bca46?pvs=4",
+    "id": "android-project",
+    "image": "Projects/Android.png"
+  },
+  {
+    "title": "Server Dashboard",
+    "description": "Monitoring server system dashboard featuring IoT using Prometheus, MQTT, and Gemini.",
+    "notionLink": "https://hazel-bronze-469.notion.site/Server-Homelab-30e4bc74dab480a2a766e205f2a599cc",
+    "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
+    "id": "server-dashboard",
+    "image": "Projects/Server.png"
+  },
+  {
+    "title": "IoT Switch",
+    "description": "Monitoring Electric Output follow Malaysia tariff TnB and swith on/off on the dashboard",
+    "notionLink": "https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555",
+    "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
+    "id": "iot-switch",
+    "image": "Projects/iot.jpeg"
+  },
+  {
+    "title": "HelmDeck Git Monitor",
+    "description": "Hybrid concept using GCP as entry point (Nginx) to my private homelab running on Orange Pi 4 Pro with K3s, Postgres (NVMe), Redis, and NestJS API via encrypted Tailscale tunnel, plus React dashboard and custom GitHub Actions runner for CI/CD.",
+    "image": "Projects/helmdeck.jpeg",
+    "ghLink": "https://github.com/haniff97/helmdeck-frontend",
+    "demoLink": "",
+    "notionLink": "https://www.notion.so/HelmDeck-Git-Monitor-34c4bc74dab480c79a94eda6accbc52a",
+    "id": "helmdeck-git-monitor"
+  },
+  {
+    "title": "Task Manager (Laravel)",
+    "description": "Task Management System using Laravel with proper ui design and database. The system is used to manage task and project.",
+    "ghLink": "https://github.com/haniff97/Task-Manager.git",
+    "id": "task-manager-laravel",
+    "image": "Projects/laravel.png"
+  },
+  {
+    "title": "AWS IoT",
+    "description": "Design a pipeline AWS bridges a local edge network (Orange Pi) with the AWS Cloud, enabling dynamic cost .",
+    "notionLink": "https://hazel-bronze-469.notion.site/AWS-IoT-3944bc74dab480fba0efcf4000c1fab3?pvs=143",
+    "id": "aws-iot",
+    "image": "Projects/AWSIot.png"
+  },
+  {
+    "title": "AWS CI/CD Pipeline",
+    "description": "Demonstrates modern cloud engineering practices by migrating a bare-metal application to a serverless AWS architecture.",
+    "notionLink": "https://app.notion.com/p/AWS-CI-CD-pipeline-3944bc74dab48040922fc976e341d218",
+    "id": "aws-ci-cd-pipeline",
+    "image": "Projects/laravel.png"
+  },
+  {
+    "title": "Infra Agent Monitoring",
+    "description": "Developed an autonomous, human-in-the-loop Site Reliability Engineering (SRE) agent that monitors infrastructure telemetry, diagnoses anomalies using Gemini API",
+    "notionLink": "https://app.notion.com/p/Infra-Agent-3944bc74dab4806fbed2d2f7cf233ca9",
+    "id": "infra-agent-monitoring",
+    "image": "Projects/agent.png"
+  }
+]

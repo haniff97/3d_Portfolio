@@ -8,7 +8,7 @@ import { SiNotion } from "react-icons/si";
 function ProjectCards(props) {
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <Card.Img variant="top" src={props.imgPath} alt={props.title} loading="lazy" />
       <Card.Body style={{ display: "flex", flexDirection: "column" }}>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify", flexGrow: 1 }}>
@@ -21,6 +21,7 @@ function ProjectCards(props) {
               className="github-btn"
               href={props.ghLink}
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -39,6 +40,7 @@ function ProjectCards(props) {
               variant="primary"
               href={props.demoLink}
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -58,6 +60,7 @@ function ProjectCards(props) {
               className="notion-btn"
               href={props.notionLink}
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'flex',
                 alignItems: 'center',

@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import projectEditor from './server/projectEditor.js';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), projectEditor()],
   optimizeDeps: {
     include: [
       '@react-three/fiber',

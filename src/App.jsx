@@ -1,37 +1,29 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Contact, Experience, Feedbacks, Hero, Navbar, Tech, StarsCanvas, Works, PWave, Footer } from './components';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+const ProjectEditor = import.meta.env.DEV ? lazy(() => import('./components/Projects/ProjectEditor')) : null;
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Info from './components/Info';
+import Footer from './components/Footer';
 import Projects from './components/Projects/Projects';
 import About from './components/About/About';
 import Resume from './components/Resume/ResumeNew';
-import Info from './components/Info'; // Assuming you have an Info component
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-dark-grey min-h-screen flex flex-col justify-between">
-        {/* Navbar Section */}
-        <Navbar />
-
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={
-            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-              <Hero />
-              <Info />
-            </div>
-          } />
-          <Route path="/hero" element={<><Hero /><Info /></>} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-        </Routes>
-
-        {/* Footer Section */}
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
+export default function App() {
+  return <BrowserRouter>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <Navbar />
+    <main id="main-content">
+      <Routes>
+        {import.meta.env.DEV && <Route path="/manage-projects" element={<Suspense fallback={<p className="page-shell">Loading editor…</p>}><ProjectEditor /></Suspense>} />}
+        <Route path="/" element={<><Hero /><Info /></>} />
+        <Route path="/hero" element={<><Hero /><Info /></>} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="*" element={<section className="page-shell"><p className="eyebrow">404</p><h1>Nothing here just yet.</h1><Link className="button button-dark" to="/">Back to home</Link></section>} />
+      </Routes>
+    </main>
+    <Footer />
+  </BrowserRouter>;
 }
-
-export default App;

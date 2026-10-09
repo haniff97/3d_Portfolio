@@ -5,15 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-grey': '#23272F',
-        'light-grey': '#F3F4F6',
-        primary: '#23272F',
-        secondary: '#CBC7C6',
-        tertiary: '#3A3F47',
-        white: '#FFFFFF',
-        'black-100': '#181A1B',
-        'black-200': '#101214',
-        'white-100': '#F3F4F6',
+        'dark-grey': '#FFFFFF', // All white background
+        'light-grey': '#F9F6F0',
+        primary: '#FFFFFF',
+        secondary: '#6C7456', // Sage green for secondary text
+        tertiary: '#FFFFFF',
+        white: '#FFFFFF',     // Restore white to actual white!
+        'black-100': '#FFFFFF',
+        'black-200': '#F9F6F0',
+        'white-100': '#4A533D',
+        accent: '#4A533D',    // Deep olive green for accents
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
