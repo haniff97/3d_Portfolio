@@ -35,18 +35,20 @@
   {
     "title": "Server Dashboard",
     "description": "Monitoring server system dashboard featuring IoT using Prometheus, MQTT, and Gemini.",
-    "notionLink": "https://hazel-bronze-469.notion.site/Server-Homelab-30e4bc74dab480a2a766e205f2a599cc",
+    "image": "/project-images/5d882c04-a38a-43e5-82fc-4607fcea5177.png",
     "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
-    "id": "server-dashboard",
-    "image": "Projects/Server.png"
+    "demoLink": "",
+    "notionLink": "https://hazel-bronze-469.notion.site/Server-Homelab-30e4bc74dab480a2a766e205f2a599cc",
+    "id": "server-dashboard"
   },
   {
     "title": "IoT Switch",
     "description": "Monitoring Electric Output follow Malaysia tariff TnB and swith on/off on the dashboard",
-    "notionLink": "https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555",
+    "image": "/project-images/20888999-9381-4a63-ae43-b8aee806c3d3.png",
     "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
-    "id": "iot-switch",
-    "image": "Projects/iot.jpeg"
+    "demoLink": "",
+    "notionLink": "https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555",
+    "id": "iot-switch"
   },
   {
     "title": "HelmDeck Git Monitor",
@@ -67,9 +69,11 @@
   {
     "title": "AWS IoT",
     "description": "Design a pipeline AWS bridges a local edge network (Orange Pi) with the AWS Cloud, enabling dynamic cost .",
+    "image": "/project-images/e48bbe89-cce7-46d8-8d8a-3810d6c271dc.png",
+    "ghLink": "",
+    "demoLink": "",
     "notionLink": "https://hazel-bronze-469.notion.site/AWS-IoT-3944bc74dab480fba0efcf4000c1fab3?pvs=143",
-    "id": "aws-iot",
-    "image": "Projects/AWSIot.png"
+    "id": "aws-iot"
   },
   {
     "title": "AWS CI/CD Pipeline",
