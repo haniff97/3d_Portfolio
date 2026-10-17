@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import galleryEditor from './server/galleryEditor.js';
+import profileEditor from './server/profileEditor.js';
 import projectEditor from './server/projectEditor.js';
 
 export default defineConfig({
-  plugins: [react(), projectEditor()],
+  plugins: [react(), projectEditor(), profileEditor(), galleryEditor()],
   optimizeDeps: {
     include: [
       '@react-three/fiber',

@@ -63,3 +63,25 @@ To recheck after future changes:
 4. Check **Download PDF** and **Open PDF**, and confirm the preview fits the viewport.
 5. Click **Blog** from the navbar and **Read my blog** from About; both should reach the configured external article.
 6. Run `npm run build` before deploying.
+
+## Edit profile content and personal photo
+
+Run `npm run dev`, then open `/manage-profile` or use **Edit profile & photo** in the footer. This local page lets you:
+
+- Upload a JPEG, PNG, or WebP portrait up to 5 MB, add alternative text, and choose top/center/bottom framing.
+- Replace or remove the portrait. Home and About show the same saved photo; Putrajaya artwork is the fallback when no portrait is set.
+- Edit your name, role, location, homepage headlines, introduction, homepage About text, biography, and contact email/headline.
+
+Click **Save profile**, then commit `src/data/profile.json` and any new files in `public/profile-images/`. Build and deploy normally. Photo removal clears the reference without deleting the original image file. The editor and its `/__profile-editor` write endpoint run only in the local development server and are excluded from production. The public pages display the saved content, not the editor. The résumé PDF, career history, skills, and certifications remain separately maintained; project cards still use `/manage-projects`.
+
+The editorial redesign takes visual inspiration from [Izuddin Helmi’s portfolio](https://www.izuddinhelmi.me/): oversized typography, a quiet gray background, ruled sections, and a prominent contact area. The portfolio retains its own text, projects, navigation, and imagery.
+
+Run `node --test server/*.test.js` to verify both local editors, including uploads, persistence, stale-save protection, and rejection of cross-origin writes.
+
+## Photo-only gallery
+
+**Personal photo** in the navbar opens `/personal-photo`, a responsive gallery with no card titles or captions. Click a photo to open the full image. This gallery is separate from the portrait on Home and About.
+
+Run `npm run dev` and open `/manage-photos` (also linked in the local footer). Select one or multiple PNG, JPEG, or WebP files, up to 5 MB each. Photos save immediately in upload order. Removing a photo removes its gallery entry and keeps the original file.
+
+Commit `src/data/photos.json` and new files in `public/gallery-images/`, then build and deploy normally. The manager, its links, and its write endpoint are development-only; production displays the saved gallery. Run `node --test server/*.test.js` to check the local editors.
