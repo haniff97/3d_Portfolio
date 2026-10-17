@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 const ProjectEditor = import.meta.env.DEV ? lazy(() => import('./components/Projects/ProjectEditor')) : null;
 const ProfileEditor = import.meta.env.DEV ? lazy(() => import('./components/ProfileEditor')) : null;
 const GalleryEditor = import.meta.env.DEV ? lazy(() => import('./components/GalleryEditor')) : null;
+import RibbonBackground from './components/RibbonBackground';
 import PersonalPhoto from './components/PersonalPhoto';
 import ContactSection from './components/ContactSection';
 import Navbar from './components/Navbar';
@@ -15,6 +16,7 @@ import Resume from './components/Resume/ResumeNew';
 
 export default function App() {
   return <BrowserRouter>
+    <RibbonBackground />
     <a className="skip-link" href="#main-content">Skip to content</a>
     <Navbar />
     <main id="main-content">

@@ -85,3 +85,7 @@ Run `node --test server/*.test.js` to verify both local editors, including uploa
 Run `npm run dev` and open `/manage-photos` (also linked in the local footer). Select one or multiple PNG, JPEG, or WebP files, up to 5 MB each. Photos save immediately in upload order. Removing a photo removes its gallery entry and keeps the original file.
 
 Commit `src/data/photos.json` and new files in `public/gallery-images/`, then build and deploy normally. The manager, its links, and its write endpoint are development-only; production displays the saved gallery. Run `node --test server/*.test.js` to check the local editors.
+
+## Shared ribbon background
+
+`RibbonBackground.jsx` mounts once above the routes, so its Three.js animation continues across all portfolio pages. The original shader is visually inspired by [Bsehovac’s RetroArch Menu Ribbon](https://codepen.io/bsehovac/pen/jdawXK), adapted to a light sage/lilac palette. The canvas is fixed, ignores pointer events, and cannot change column sizing. Use the bottom-right button to pause; reduced-motion preferences start it paused. Hidden tabs stop rendering, pixel density is capped, and WebGL failure leaves the normal page background.

@@ -368,3 +368,49 @@ a:hover { color: #55506b; }
 .gallery-editor-grid img { width: 100%; height: 230px; object-fit: contain; background: #dfe1da; }
 @media (max-width: 900px) { .photo-gallery { columns: 2; } .gallery-editor-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 550px) { .photo-gallery { columns: 1; } .gallery-editor-grid { grid-template-columns: 1fr; } .photo-gallery-page .section-heading { flex-direction: column; } }
+
+.about-grid > * { min-width: 0; }
+
+/* One viewport-sized canvas shared by every route, outside document layout. */
+#root { position: relative; isolation: isolate; }
+.site-ribbon { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.site-ribbon canvas { display: block; width: 100%; height: 100%; }
+.ribbon-toggle { position: fixed; right: 16px; bottom: 16px; z-index: 50; border: 1px solid #c8cac2; border-radius: 30px; padding: 9px 14px; background: #f5f5eff0; color: #55535d; font: 11px 'DM Sans', sans-serif; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.work-carousel { min-width: 0; }
+.work-carousel-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin: 28px 0 22px; }
+.work-carousel-toolbar > p { color: var(--muted); font-size: 13px; }
+.work-carousel-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.work-carousel-controls > span { font: 12px ui-monospace, monospace; margin-right: 12px; }
+.carousel-total { color: var(--muted); }
+.work-carousel-controls button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #858780; border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; font-size: 20px; }
+.work-carousel-controls button:hover:not(:disabled) { background: var(--ink); color: #fff; }
+.work-carousel-controls button:disabled { opacity: .25; cursor: default; }
+.work-track { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 5px 0 20px; scroll-padding-inline: 0; }
+.work-track::-webkit-scrollbar { display: none; }
+.work-track::after { content: ''; flex: 0 0 calc(18% - 28px); }
+.work-slide { flex: 0 0 82%; min-width: 0; scroll-snap-align: start; }
+.work-preview { position: relative; aspect-ratio: 16 / 10; background: #ded9e7; border-radius: 26px; padding: 54px 42px 34px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.work-tone-1 .work-preview { background: #e6e0c9; }
+.work-tone-2 .work-preview { background: #d7e1d9; }
+.work-index { position: absolute; left: 28px; top: 22px; color: #5c5965; font: 10px ui-monospace, monospace; letter-spacing: .12em; }
+.work-preview img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 15px #25243320); }
+.work-details { display: flex; align-items: flex-start; justify-content: space-between; gap: 28px; padding: 24px 2px 0; }
+.work-details h3 { font-size: clamp(21px, 2.6vw, 30px); margin-bottom: 10px; }
+.work-details p { color: var(--muted); font-size: 14px; line-height: 1.7; max-width: 64ch; }
+.work-open { flex-shrink: 0; display: inline-flex; align-items: center; gap: 18px; padding: 12px 20px; border: 1px solid #858780; border-radius: 30px; font-size: 13px; }
+.work-open:hover { color: white; background: var(--ink); }
+.work-progress { height: 2px; background: #cdd0c6; margin-top: 25px; }
+.work-progress span { display: block; height: 100%; background: #57516c; transition: transform .3s; }
+@media (max-width: 700px) {
+  .work-carousel-toolbar { align-items: flex-end; }
+  .work-carousel-toolbar > p { max-width: 140px; font-size: 12px; }
+  .work-track { gap: 16px; }
+  .work-slide { flex-basis: 91%; }
+  .work-track::after { flex-basis: calc(9% - 16px); }
+  .work-preview { border-radius: 18px; padding: 40px 15px 18px; aspect-ratio: 1.25; }
+  .work-index { left: 18px; top: 17px; font-size: 9px; }
+  .work-details { flex-direction: column; gap: 16px; padding-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .work-progress span { transition: none; } }
