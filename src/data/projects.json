@@ -49,7 +49,7 @@
   {
     "title": "IoT Switch",
     "description": "Built a dashboard for monitoring and controlling Tuya smart plugs directly over the local network. Tracks live power, voltage, and current, with daily, weekly, and monthly energy charts and electricity-cost estimates based on configured TNB tariffs. Includes confirmation prompts for critical devices and stores energy history in MariaDB.\nTech stack: Python · NiceGUI · tinytuya · MariaDB · MQTT",
-    "image": "/project-images/20888999-9381-4a63-ae43-b8aee806c3d3.png",
+    "image": "/project-images/94f7bcb5-aec7-4bf4-9d71-0cb348b989b0.png",
     "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
     "demoLink": "",
     "notionLink": "https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555",
