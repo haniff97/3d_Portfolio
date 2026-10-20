@@ -418,3 +418,5 @@ a:hover { color: #55506b; }
 @media (max-width: 700px) {
   .profile-portrait img, .project-card-view .card-img-top, .pdf-shell, .about-note { border-radius: 18px; }
 }
+
+.profile-portrait.place-photo img { border-radius: 8px; }

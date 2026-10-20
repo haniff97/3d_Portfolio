@@ -49,13 +49,14 @@ export default function projectEditor() {
           const projects = JSON.parse(current);
           const candidate = input.project;
           if (!candidate || typeof candidate !== 'object') throw new Error('Project data is missing.');
+          if (candidate.blogLink === undefined) candidate.blogLink = '';
           const project = {};
-          for (const [key, max] of [['title', 120], ['description', 3000], ['image', 2000], ['ghLink', 2000], ['demoLink', 2000], ['notionLink', 2000]]) {
+          for (const [key, max] of [['title', 120], ['description', 3000], ['image', 2000], ['ghLink', 2000], ['demoLink', 2000], ['notionLink', 2000], ['blogLink', 2000]]) {
             if (typeof candidate[key] !== 'string' || candidate[key].length > max) throw new Error(`Invalid ${key}.`);
             project[key] = candidate[key].trim();
           }
           if (!project.title || !project.description) throw new Error('Title and description are required.');
-          for (const key of ['ghLink', 'demoLink', 'notionLink']) {
+          for (const key of ['ghLink', 'demoLink', 'notionLink', 'blogLink']) {
             if (project[key] && !/^https?:\/\//.test(project[key])) throw new Error('Links must start with http:// or https://.');
             if (project[key]) new URL(project[key]);
           }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projectImage } from '../../data/projectImages';
 
-const blank = { title: '', description: '', image: '', ghLink: '', demoLink: '', notionLink: '' };
+const blank = { title: '', description: '', image: '', ghLink: '', demoLink: '', notionLink: '', blogLink: '' };
 export default function ProjectEditor() {
   const [data, setData] = useState(null);
   const [form, setForm] = useState(blank);
@@ -73,7 +73,7 @@ export default function ProjectEditor() {
           <label>Upload image <small>PNG, JPEG or WebP · up to 5 MB</small><input key={`${form.id || 'new'}-${upload ? 'uploaded' : 'empty'}`} type="file" accept="image/png,image/jpeg,image/webp" onChange={chooseImage} /></label>
           {upload ? <button type="button" className="text-link" onClick={() => setUpload('')}>Remove selected upload</button> : <label>Image URL or existing image path<input name="image" value={form.image} onChange={change} placeholder="https://example.com/project.png" required /></label>}
           {(upload || form.image) && <img className="editor-image" src={upload || projectImage(form.image)} alt="Project image preview" />}
-          {[['ghLink', 'GitHub URL'], ['demoLink', 'Live demo URL'], ['notionLink', 'Notion URL']].map(([name, label]) => <label key={name}>{label} <small>optional</small><input type="url" name={name} value={form[name]} onChange={change} placeholder="https://" /></label>)}
+          {[['ghLink', 'GitHub URL'], ['demoLink', 'Live demo URL'], ['notionLink', 'Notion URL'], ['blogLink', 'Blog URL']].map(([name, label]) => <label key={name}>{label} <small>optional</small><input type="url" name={name} value={form[name] || ''} onChange={change} placeholder="https://" /></label>)}
           <button className="button button-dark" type="submit">{busy ? 'Saving…' : reading ? 'Reading image…' : 'Save project'}</button>
         </fieldset>
       </form>

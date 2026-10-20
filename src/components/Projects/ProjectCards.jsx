@@ -35,6 +35,24 @@ function ProjectCards(props) {
             </Button>
           )}
 
+          {props.blogLink && (
+            <Button
+              variant="primary"
+              href={props.blogLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                paddingLeft: '10px',
+              }}
+            >
+              <CgWebsite style={{ marginRight: '8px' }} />Read blog
+            </Button>
+          )}
+
           {!props.isBlog && props.demoLink && (
             <Button
               variant="primary"
