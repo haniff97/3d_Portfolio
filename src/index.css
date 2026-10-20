@@ -252,7 +252,7 @@ a:hover { color: #55506b; }
 .editorial-hero .hero-bottom { margin-top: 48px; padding-block: 22px; }
 .intro-section { grid-template-columns: 1fr 1fr; padding-block: 64px; gap: 75px; align-items: center; }
 .profile-portrait { margin-bottom: 32px; }
-.profile-portrait img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; filter: saturate(.8); background: #d9dcd5; }
+.profile-portrait img { border-radius: 26px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; filter: saturate(.8); background: #d9dcd5; }
 .profile-portrait.place-photo { overflow: hidden; }
 .profile-portrait.place-photo img { aspect-ratio: auto; height: auto; object-fit: contain; filter: none; }
 .profile-portrait figcaption { display: flex; justify-content: space-between; gap: 15px; padding-block: 12px; font-size: 10px; font-family: ui-monospace, monospace; color: var(--muted); }
@@ -269,7 +269,7 @@ a:hover { color: #55506b; }
 .about-grid { grid-template-columns: 1.2fr 1fr; gap: 75px; }
 .about-prose h2 { font-size: 34px; }
 .about-prose p { font-size: 18px; line-height: 1.7; }
-.about-note { border-radius: 0; background: #dfe1da; padding: 30px; }
+.about-note { border-radius: 26px; background: #dfe1da; padding: 30px; }
 .about-note h2 { font-size: 32px; }
 .career-item { grid-template-columns: 220px 1fr; padding-block: 32px; }
 .career-item h3 { font-size: 28px; }
@@ -277,12 +277,12 @@ a:hover { color: #55506b; }
 .skill-tags span { background: transparent; border-color: #b7bbb3; border-radius: 0; }
 .project-heading { font-size: clamp(48px, 7vw, 90px); letter-spacing: -.07em; }
 .project-card-view { border-radius: 0; background: transparent; border: none; border-bottom: 1px solid var(--line); }
-.project-card-view .card-img-top { background: #dfe1da; height: 250px; padding: 18px; }
+.project-card-view .card-img-top { background: #dfe1da; height: 250px; padding: 18px; border-radius: 26px; }
 .project-card-view .card-body { padding: 24px 0 32px; }
 .project-card-view .card-title { font-size: 25px; font-family: 'DM Sans', sans-serif; }
 .project-card-view .card-text { font-size: 14px; }
 .project-card-view .btn { border-radius: 25px; background: transparent; border-color: #b5b9af; }
-.pdf-shell { background: #dfe1da; border-radius: 0; }
+.pdf-shell { background: #dfe1da; border-radius: 26px; overflow: hidden; }
 .contact-section { padding-block: 70px 100px; }
 .contact-section > p { font-size: clamp(18px, 2.1vw, 28px); color: var(--muted); letter-spacing: -.035em; }
 .contact-section h1 { max-width: 1020px; font-size: clamp(52px, 9vw, 122px); line-height: 1.02; font-weight: 700; letter-spacing: -.075em; margin-block: 35px; overflow-wrap: anywhere; }
@@ -414,3 +414,7 @@ a:hover { color: #55506b; }
   .work-details { flex-direction: column; gap: 16px; padding-top: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .work-progress span { transition: none; } }
+
+@media (max-width: 700px) {
+  .profile-portrait img, .project-card-view .card-img-top, .pdf-shell, .about-note { border-radius: 18px; }
+}

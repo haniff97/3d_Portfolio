@@ -4,7 +4,7 @@ import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 import projects from '../data/projects.json';
 import { projectImage } from '../data/projectImages';
 
-const featured = ['helmdeck-git-monitor', 'iot-switch'];
+const featured = ['ai-receipt-tracker', 'helmdeck-git-monitor', 'iot-switch'];
 const slides = [...projects.filter(project => featured.includes(project.id)).sort((a, b) => featured.indexOf(a.id) - featured.indexOf(b.id)), ...projects.filter(project => !featured.includes(project.id))];
 const number = value => String(value).padStart(2, '0');
 

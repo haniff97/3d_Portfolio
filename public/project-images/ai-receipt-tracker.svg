@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#e5e0ee"/><stop offset="1" stop-color="#dce8df"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#353346" flood-opacity=".12"/></filter></defs>
+<rect width="1200" height="750" fill="url(#bg)"/>
+<g font-family="Arial, sans-serif" fill="#292b32">
+<text x="72" y="84" font-size="16" letter-spacing="4">AI / EVERYDAY INTELLIGENCE</text>
+<text x="72" y="155" font-size="49" font-weight="700">Receipts into insights.</text>
+<text x="72" y="198" font-size="21" fill="#626575">Vision extraction · Spending questions · Anomaly review</text>
+<g filter="url(#shadow)"><rect x="72" y="265" width="260" height="350" rx="22" fill="#fafaf5"/><rect x="422" y="295" width="280" height="275" rx="26" fill="#57516c"/><rect x="792" y="265" width="335" height="350" rx="22" fill="#fafaf5"/></g>
+<text x="102" y="313" font-size="14" letter-spacing="2" fill="#747685">01 / RECEIPT</text>
+<path d="M106 352h166M106 383h116M106 414h166M106 445h140" stroke="#d5d6cd" stroke-width="10" stroke-linecap="round"/>
+<path d="M105 483h190" stroke="#a4a898" stroke-dasharray="5 6"/>
+<text x="104" y="528" font-size="17">Total</text><text x="104" y="567" font-size="30" font-weight="700">Scan &amp; review</text>
+<path d="M349 435h53m-13-12 13 12-13 12M719 435h53m-13-12 13 12-13 12" fill="none" stroke="#777385" stroke-width="3"/>
+<text x="452" y="346" font-size="14" letter-spacing="2" fill="#dbd5e6">02 / INTERPRET</text>
+<text x="452" y="406" font-size="32" fill="#fff" font-weight="700">Gemini</text><text x="452" y="443" font-size="19" fill="#e6e1ef">Vision extraction</text>
+<path d="M452 467h215" stroke="#8d879e"/>
+<text x="452" y="504" font-size="23" fill="#fff">OCR + DeepSeek</text><text x="452" y="536" font-size="16" fill="#e6e1ef">Fallback interpretation</text>
+<text x="823" y="313" font-size="14" letter-spacing="2" fill="#747685">03 / UNDERSTAND</text>
+<rect x="820" y="346" width="274" height="65" rx="13" fill="#ece9f0"/><text x="839" y="386" font-size="20">Ask about spending ↗</text>
+<rect x="829" y="479" width="38" height="63" rx="7" fill="#a4b8a9"/><rect x="884" y="450" width="38" height="92" rx="7" fill="#8eaa99"/><rect x="939" y="469" width="38" height="73" rx="7" fill="#a4b8a9"/><rect x="994" y="430" width="38" height="112" rx="7" fill="#807591"/>
+<text x="823" y="584" font-size="17" fill="#626575">Summaries + unusual spending</text>
+<text x="72" y="695" font-size="16" fill="#626575">RECEIPT TRACKER</text><text x="785" y="695" font-size="16" fill="#626575">React / FastAPI / Gemini / DeepSeek</text>
+</g></svg>

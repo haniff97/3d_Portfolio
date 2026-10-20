@@ -1,5 +1,14 @@
 [
   {
+    "id": "ai-receipt-tracker",
+    "title": "AI Receipt Tracker",
+    "description": "Built a mobile-friendly, AI-assisted receipt tracker: scan a receipt, review the extracted transaction, then ask questions about spending in plain language. Gemini extracts receipt fields, with Tesseract OCR and DeepSeek as a fallback. The dashboard combines spending totals and category breakdowns with AI-generated summaries, while DeepSeek reviews statistically flagged unusual expenses. Built with React, FastAPI, and SQLAlchemy, keeping extracted amounts editable and model interpretation separate from SQL-calculated totals.",
+    "image": "/project-images/receipt-tracker-ask-ai.png",
+    "ghLink": "https://github.com/haniff97/receipt_scan",
+    "demoLink": "",
+    "notionLink": ""
+  },
+  {
     "title": "Inspection Robot",
     "description": "This is my FYP project which is building a 'Inspection Pipe Robot'. The robot can expand and shrink automaticly using obsorber from rc car. Its feature a gps, camera with 6 led, and timing belt to better griped in pipe. The whole body is fabricated using 3D print..",
     "ghLink": "https://github.com/haniff97/GPS-and-GSM-with-thingsboard.git",
