@@ -43,11 +43,7 @@ To replace the downloadable résumé, update `public/Haniff-Resume.pdf`. `RESUME
 
 **Reported behavior:** Clicking Blog did not open the intended blog page.
 
-The old navbar pointed to `http://35.230.24.195/`. That address responded successfully when checked, so it was not treated as a confirmed server outage. The owner supplied the intended article URL:
-
-[Welcome to my blog](http://35.230.24.195/blog/welcome-to-my-blog-aFPGQ)
-
-The fix stores that exact URL in `BLOG_URL` in `src/siteConfig.js`. Both the navbar and About page use this shared value. Blog navigation uses a normal `<a href>` in the same tab, while internal portfolio pages use React Router links. This keeps the external destination separate from client-side routes and removes the need to open another tab.
+The blog URL is configured as `http://35.230.24.195/` in `BLOG_URL` in `src/siteConfig.js`. Both the navbar ("Blog") and About page ("Read my blog") use this shared value. Blog navigation uses a normal `<a href>` in the same tab, while internal portfolio pages use React Router links. This keeps the external destination separate from client-side routes and removes the need to open another tab.
 
 If the blog moves, update the default in `src/siteConfig.js`, or set `VITE_BLOG_URL` before building. Vite reads this environment variable at build time, so rebuild and redeploy after changing it. Changing the link does not manage the external blog server or its availability.
 
