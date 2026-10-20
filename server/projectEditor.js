@@ -47,6 +47,16 @@ export default function projectEditor() {
           const current = await readFile(file, 'utf8');
           if (input.revision !== revision(current)) return respond(409, { error: 'Projects changed elsewhere. Reload the editor before saving.' });
           const projects = JSON.parse(current);
+          if (input.action === 'reorder') {
+            const ids = input.ids;
+            if (!Array.isArray(ids) || ids.length !== projects.length || new Set(ids).size !== projects.length || ids.some(id => !projects.some(project => project.id === id))) throw new Error('Invalid project order. Reload and try again.');
+            const ordered = ids.map(id => projects.find(project => project.id === id));
+            const output = JSON.stringify(ordered, null, 2) + '\n';
+            temporary = file + '.tmp';
+            await writeFile(temporary, output);
+            await rename(temporary, file);
+            return respond(200, { projects: ordered, revision: revision(output) });
+          }
           const candidate = input.project;
           if (!candidate || typeof candidate !== 'object') throw new Error('Project data is missing.');
           if (candidate.blogLink === undefined) candidate.blogLink = '';

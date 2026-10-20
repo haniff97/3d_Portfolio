@@ -1,16 +1,20 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
 import projects from '../data/projects.json';
 import { projectImage } from '../data/projectImages';
 
-const featured = ['ai-receipt-tracker', 'helmdeck-git-monitor', 'iot-switch'];
-const slides = [...projects.filter(project => featured.includes(project.id)).sort((a, b) => featured.indexOf(a.id) - featured.indexOf(b.id)), ...projects.filter(project => !featured.includes(project.id))];
+const slides = projects;
 const number = value => String(value).padStart(2, '0');
 
 export default function ProjectCarousel() {
   const track = useRef(null);
   const [active, setActive] = useState(0);
+  const order = slides.map(project => project.id).join('|');
+  useEffect(() => {
+    track.current?.scrollTo({ left: 0, behavior: 'instant' });
+    setActive(0);
+  }, [order]);
   const go = index => {
     const element = track.current;
     const card = element.children[index];

@@ -89,3 +89,7 @@ Commit `src/data/photos.json` and new files in `public/gallery-images/`, then bu
 ## Shared ribbon background
 
 `RibbonBackground.jsx` mounts once above the routes, so its Three.js animation continues across all portfolio pages. The original shader is visually inspired by [Bsehovac’s RetroArch Menu Ribbon](https://codepen.io/bsehovac/pen/jdawXK), adapted to a light sage/lilac palette. The canvas is fixed, ignores pointer events, and cannot change column sizing. Use the bottom-right button to pause; reduced-motion preferences start it paused. Hidden tabs stop rendering, pixel density is capped, and WebGL failure leaves the normal page background.
+
+### Arrange project order
+
+In `/manage-projects`, use the up/down arrows beside each title. Each move saves immediately to `src/data/projects.json`, preserving any unsaved form edits. The Projects page and homepage carousel both follow this order. Commit the JSON file and deploy to publish the new order.

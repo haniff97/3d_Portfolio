@@ -35,6 +35,16 @@ test('local editor persists cards and images; rejects unsafe requests and stale 
     assert.equal(edited.projects[0].title, 'Edited project');
     assert.match(edited.projects[0].image, /^\/project-images\/.*\.png$/);
     assert.ok((await readFile(path.join(root, 'public', edited.projects[0].image))).length > 0);
+    const second = await (await save({ project, revision: edited.revision })).json();
+    const ids = second.projects.map(item => item.id).reverse();
+    assert.equal((await save({ action: 'reorder', revision: second.revision, ids: [ids[0], ids[0]] })).status, 400);
+    assert.equal((await save({ action: 'reorder', revision: second.revision, ids: ['unknown', ids[0]] })).status, 400);
+    const reorderedResponse = await save({ action: 'reorder', revision: second.revision, ids });
+    assert.equal(reorderedResponse.status, 200);
+    const reordered = await reorderedResponse.json();
+    assert.deepEqual(reordered.projects, [...second.projects].reverse());
+    assert.deepEqual(JSON.parse(await readFile(file, 'utf8')), reordered.projects);
+    assert.equal((await save({ action: 'reorder', revision: second.revision, ids })).status, 409);
   } finally {
     server.closeAllConnections();
     await new Promise(resolve => server.close(resolve));

@@ -47,6 +47,21 @@ export default function ProjectEditor() {
     reader.onerror = () => { setError('Could not read the image. Please try again.'); setReading(false); };
     reader.readAsDataURL(file);
   };
+  const move = async (index, direction) => {
+    const ordered = [...data.projects];
+    const destination = index + direction;
+    if (destination < 0 || destination >= ordered.length) return;
+    [ordered[index], ordered[destination]] = [ordered[destination], ordered[index]];
+    setBusy(true); setError(''); setMessage('');
+    try {
+      const response = await fetch('/__project-editor', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'reorder', ids: ordered.map(project => project.id), revision: data.revision }) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      setData(result);
+      setMessage(`Moved ${data.projects[index].title} to position ${destination + 1}. Order saved for the homepage and Projects page.`);
+    } catch (error) { setError(error.message); }
+    finally { setBusy(false); }
+  };
   const save = async event => {
     event.preventDefault(); setBusy(true); setError(''); setMessage('');
     try {
@@ -65,7 +80,7 @@ export default function ProjectEditor() {
     {error && <p className="editor-error" role="alert">{error}</p>}
     {message && <p className="editor-success" role="status">{message}</p>}
     {!data ? <p>{error ? 'Reload this page to try again.' : 'Loading projects…'}</p> : <div className="editor-layout">
-      <aside className="editor-list"><button type="button" className="button button-dark" disabled={busy || reading} onClick={() => select(null)}>+ New project</button><p>{data.projects.length} projects</p>{data.projects.map(project => <button type="button" disabled={busy || reading} key={project.id} onClick={() => select(project)} aria-pressed={form.id === project.id}>{project.title}</button>)}</aside>
+      <aside className="editor-list"><button type="button" className="button button-dark" disabled={busy || reading} onClick={() => select(null)}>+ New project</button><p>{data.projects.length} projects</p><p className="reorder-hint">Use ↑ / ↓ to arrange projects. Order saves immediately.</p>{data.projects.map((project, index) => <div className="editor-project-row" key={project.id}><button className="editor-project-select" type="button" disabled={busy || reading} onClick={() => select(project)} aria-pressed={form.id === project.id}><span>{index + 1}.</span> {project.title}</button><div className="editor-order-controls"><button type="button" disabled={busy || reading || index === 0} onClick={() => move(index, -1)} aria-label={`Move ${project.title} up`}>↑</button><button type="button" disabled={busy || reading || index === data.projects.length - 1} onClick={() => move(index, 1)} aria-label={`Move ${project.title} down`}>↓</button></div></div>)}</aside>
       <form onSubmit={save} className="editor-form"><h2>{form.id ? 'Edit project' : 'New project'}</h2>
         <fieldset disabled={busy || reading}>
           <label>Title<input name="title" value={form.title} onChange={change} maxLength={120} required /></label>

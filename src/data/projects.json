@@ -10,17 +10,51 @@
     "blogLink": "http://35.230.24.195/blog/receipt-tracker"
   },
   {
-    "title": "Inspection Robot",
-    "description": "This is my FYP project which is building a 'Inspection Pipe Robot'. The robot can expand and shrink automaticly using obsorber from rc car. Its feature a gps, camera with 6 led, and timing belt to better griped in pipe. The whole body is fabricated using 3D print..",
-    "ghLink": "https://github.com/haniff97/GPS-and-GSM-with-thingsboard.git",
-    "id": "inspection-robot",
-    "image": "Projects/Robot.png"
+    "title": "AWS IoT",
+    "description": "Hybrid Edge-to-Cloud IoT Monitor\nBuilt a smart-plug monitoring system that combines local processing on an Orange Pi with AWS IoT Core for MQTT telemetry. Tracks energy usage, estimates electricity costs, and stores readings in MariaDB. A dashboard hosted on S3 and CloudFront accesses the local FastAPI service through Cloudflare Tunnel, with AWS infrastructure provisioned using Terraform.\nTech stack: Python · FastAPI · MariaDB · MQTT · AWS IoT Core · S3 · CloudFront · Terraform",
+    "image": "/project-images/e48bbe89-cce7-46d8-8d8a-3810d6c271dc.png",
+    "ghLink": "https://github.com/haniff97/aws-iot.git",
+    "demoLink": "",
+    "notionLink": "https://hazel-bronze-469.notion.site/AWS-IoT-3944bc74dab480fba0efcf4000c1fab3?pvs=143",
+    "blogLink": "",
+    "id": "aws-iot"
   },
   {
-    "title": "E-Commerce",
-    "description": "While building it, i learned about xampp and wordpress plug in for e-commerce applications. Such as woocommerce, domain, and the tool for ui design.",
-    "id": "e-commerce",
-    "image": "Projects/ecommerce.png"
+    "title": "AWS CI/CD Pipeline",
+    "description": "Demonstrates modern cloud engineering practices by migrating a bare-metal application to a serverless AWS architecture.",
+    "notionLink": "https://app.notion.com/p/AWS-CI-CD-pipeline-3944bc74dab48040922fc976e341d218",
+    "id": "aws-ci-cd-pipeline",
+    "image": "Projects/laravel.png"
+  },
+  {
+    "title": "Server Dashboard",
+    "description": "AI-Powered Homelab Dashboard\nBuilt a real-time dashboard that brings together server health, IoT sensors, smart-plug energy usage, and network diagnostics. Integrated DeepSeek to generate SRE-style health summaries and interpret network anomalies, with Telegram alerts and remote status queries. Includes local smart-plug control, electricity-cost estimates, and configurable service management, built with Python and NiceGUI using an MVC architecture.\nTech stack: Python · NiceGUI · Prometheus · MQTT · MariaDB · DeepSeek · AWS DynamoDB · Docker · Kubernetes/Helm",
+    "image": "/project-images/17d0c0bd-9a8d-48c2-ad3b-eb3307120470.png",
+    "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
+    "demoLink": "",
+    "notionLink": "https://hazel-bronze-469.notion.site/Server-Homelab-30e4bc74dab480a2a766e205f2a599cc",
+    "blogLink": "",
+    "id": "server-dashboard"
+  },
+  {
+    "title": "Infra Agent Monitoring",
+    "description": "Built an AI-assisted SRE agent that monitors infrastructure telemetry and uses Gemini to investigate anomalies. Combines live system data with AI-generated diagnostic insights, while requiring human approval before infrastructure actions.",
+    "image": "Projects/agent.png",
+    "ghLink": "",
+    "demoLink": "",
+    "notionLink": "https://app.notion.com/p/Infra-Agent-3944bc74dab4806fbed2d2f7cf233ca9",
+    "blogLink": "",
+    "id": "infra-agent-monitoring"
+  },
+  {
+    "title": "IoT Switch",
+    "description": "Built a dashboard for monitoring and controlling Tuya smart plugs directly over the local network. Tracks live power, voltage, and current, with daily, weekly, and monthly energy charts and electricity-cost estimates based on configured TNB tariffs. Includes confirmation prompts for critical devices and stores energy history in MariaDB.\nTech stack: Python · NiceGUI · tinytuya · MariaDB · MQTT",
+    "image": "/project-images/20888999-9381-4a63-ae43-b8aee806c3d3.png",
+    "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
+    "demoLink": "",
+    "notionLink": "https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555",
+    "blogLink": "",
+    "id": "iot-switch"
   },
   {
     "title": "Figma Design",
@@ -43,22 +77,11 @@
     "image": "Projects/Android.png"
   },
   {
-    "title": "Server Dashboard",
-    "description": "Monitoring server system dashboard featuring IoT using Prometheus, MQTT, and Gemini.",
-    "image": "/project-images/5d882c04-a38a-43e5-82fc-4607fcea5177.png",
-    "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
-    "demoLink": "",
-    "notionLink": "https://hazel-bronze-469.notion.site/Server-Homelab-30e4bc74dab480a2a766e205f2a599cc",
-    "id": "server-dashboard"
-  },
-  {
-    "title": "IoT Switch",
-    "description": "Monitoring Electric Output follow Malaysia tariff TnB and swith on/off on the dashboard",
-    "image": "/project-images/20888999-9381-4a63-ae43-b8aee806c3d3.png",
-    "ghLink": "https://github.com/haniff97/Server_Dashboard.git",
-    "demoLink": "",
-    "notionLink": "https://www.notion.so/IoT-Switch-34c4bc74dab48096acd7ceba308d9555",
-    "id": "iot-switch"
+    "title": "Inspection Robot",
+    "description": "This is my FYP project which is building a 'Inspection Pipe Robot'. The robot can expand and shrink automaticly using obsorber from rc car. Its feature a gps, camera with 6 led, and timing belt to better griped in pipe. The whole body is fabricated using 3D print..",
+    "ghLink": "https://github.com/haniff97/GPS-and-GSM-with-thingsboard.git",
+    "id": "inspection-robot",
+    "image": "Projects/Robot.png"
   },
   {
     "title": "HelmDeck Git Monitor",
@@ -77,26 +100,9 @@
     "image": "Projects/laravel.png"
   },
   {
-    "title": "AWS IoT",
-    "description": "Design a pipeline AWS bridges a local edge network (Orange Pi) with the AWS Cloud, enabling dynamic cost .",
-    "image": "/project-images/e48bbe89-cce7-46d8-8d8a-3810d6c271dc.png",
-    "ghLink": "",
-    "demoLink": "",
-    "notionLink": "https://hazel-bronze-469.notion.site/AWS-IoT-3944bc74dab480fba0efcf4000c1fab3?pvs=143",
-    "id": "aws-iot"
-  },
-  {
-    "title": "AWS CI/CD Pipeline",
-    "description": "Demonstrates modern cloud engineering practices by migrating a bare-metal application to a serverless AWS architecture.",
-    "notionLink": "https://app.notion.com/p/AWS-CI-CD-pipeline-3944bc74dab48040922fc976e341d218",
-    "id": "aws-ci-cd-pipeline",
-    "image": "Projects/laravel.png"
-  },
-  {
-    "title": "Infra Agent Monitoring",
-    "description": "Developed an autonomous, human-in-the-loop Site Reliability Engineering (SRE) agent that monitors infrastructure telemetry, diagnoses anomalies using Gemini API",
-    "notionLink": "https://app.notion.com/p/Infra-Agent-3944bc74dab4806fbed2d2f7cf233ca9",
-    "id": "infra-agent-monitoring",
-    "image": "Projects/agent.png"
+    "title": "E-Commerce",
+    "description": "While building it, i learned about xampp and wordpress plug in for e-commerce applications. Such as woocommerce, domain, and the tool for ui design.",
+    "id": "e-commerce",
+    "image": "Projects/ecommerce.png"
   }
 ]
