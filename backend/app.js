@@ -5,12 +5,12 @@ import { readFile } from 'node:fs/promises';
 
 const blogContext = createBlogContext();
 
-async function portfolioContext() {
-  const [profile, projects] = await Promise.all(['profile', 'projects'].map(name => readFile(new URL(`../src/data/${name}.json`, import.meta.url), 'utf8').then(JSON.parse)));
+async function portfolioContext(env = process.env) {
+  const [profile, projects] = await Promise.all(['profile', 'projects'].map(name => readFile(new URL(`${name}.json`, env.PORTFOLIO_DATA_DIR || new URL("../src/data/", import.meta.url)), 'utf8').then(JSON.parse)));
   return JSON.stringify({ profile, blogPosts: await blogContext(), projects: projects.map(({ title, description, ghLink, blogLink, demoLink, notionLink }) => ({ title, description, ghLink, blogLink, demoLink, notionLink })) });
 }
 
-export function createApp({ env = process.env, fetchImpl = fetch, context = portfolioContext } = {}) {
+export function createApp({ env = process.env, fetchImpl = fetch, context = () => portfolioContext(env) } = {}) {
   const app = express();
   app.disable('x-powered-by');
   if (env.TRUST_LOCAL_PROXY === 'true') app.set('trust proxy', 'loopback');

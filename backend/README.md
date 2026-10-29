@@ -75,3 +75,23 @@ Origin checks are not authentication; scripts can spoof them. Limits are 10 requ
 ## Automatic blog updates
 
 `blog.js` reads the public blog at `http://35.230.24.195/` and up to six homepage articles, with a five-minute on-demand cache. New posts do not require redeploying the portfolio, but must appear on the blog homepage. Article text is capped at 6,000 characters per post. Fetch failures fall back to portfolio-only context. See the engineering guide for bounds and scraper maintenance.
+
+## Firebase Cloud Functions deployment
+
+The repository now includes `firebase.js`, which wraps the existing Express app in a second-generation HTTPS function. Hosting routes `/api/**` to `portfolioChat` in `asia-east1` before the SPA fallback.
+
+Run from the repository root:
+
+```sh
+npm --prefix backend install
+npm --prefix backend run prepare:firebase
+firebase functions:secrets:set DEEPSEEK_API_KEY
+npm run build
+firebase deploy --only functions:portfolio-chat,hosting
+```
+
+Functions require a billing-enabled Firebase project (Blaze). Set the secret using the CLI prompt; do not paste it into source files. The preparation script creates `.firebase-functions/` using an explicit list of backend files and public JSON. It never copies your local `.env`. The predeploy hook refreshes the package on future deployments. Deploy functions again after updating profile/project data, not just Hosting.
+
+The function allows the project's web.app and firebaseapp.com origins by default. Add any custom portfolio domain to its ALLOWED_ORIGINS configuration. It scales to zero, uses at most one instance and supports three concurrent requests. In-memory limits still reset with instance restarts and are not a durable spending cap. Without trusting forwarded headers, the IP limiter may group visitors behind the platform proxy; this is conservative but can limit shared traffic.
+
+After deployment, `/api/health` should return JSON with `chatConfigured: true`, not index.html. Test a chat question from the deployed About page. Local development still uses `backend/server.js` and the Vite proxy.

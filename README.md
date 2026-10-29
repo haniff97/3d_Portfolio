@@ -74,8 +74,6 @@ Run `npm run dev`, then open `/manage-profile` or use **Edit profile & photo** i
 
 Click **Save profile**, then commit `src/data/profile.json` and any new files in `public/profile-images/`. Build and deploy normally. Photo removal clears the reference without deleting the original image file. The editor and its `/__profile-editor` write endpoint run only in the local development server and are excluded from production. The public pages display the saved content, not the editor. The résumé PDF, career history, skills, and certifications remain separately maintained; project cards still use `/manage-projects`.
 
-The editorial redesign takes visual inspiration from [Izuddin Helmi’s portfolio](https://www.izuddinhelmi.me/): oversized typography, a quiet gray background, ruled sections, and a prominent contact area. The portfolio retains its own text, projects, navigation, and imagery.
-
 Run `node --test server/*.test.js` to verify both local editors, including uploads, persistence, stale-save protection, and rejection of cross-origin writes.
 
 ## Photo-only gallery
@@ -119,3 +117,9 @@ New public blog posts are discovered from the homepage on the next chat request 
 ### Blog knowledge
 
 The chatbot also reads public blog articles automatically. It refreshes up to six posts linked from the blog homepage on the next question after a five-minute cache expires. No portfolio redeployment is needed for those blog updates. Older posts beyond this window and drafts are not included. See the engineering guide for the HTML scraper and its limits.
+
+### Deploy the chatbot with Firebase
+
+Firebase Hosting rewrites `/api/**` to the `portfolioChat` Cloud Function. Run `npm --prefix backend install`, `npm --prefix backend run prepare:firebase`, and `npm run build`, then deploy with `firebase deploy --only functions:portfolio-chat,hosting`. Set `DEEPSEEK_API_KEY` using `firebase functions:secrets:set DEEPSEEK_API_KEY` before the first deployment. The function requires Firebase billing (Blaze).
+
+The generated `.firebase-functions/` folder includes public profile/project JSON and an explicit set of backend files. Local `.env` files are not copied. See [backend deployment notes](backend/README.md) for origins, limits and verification. Updating project/profile facts in production requires redeploying the function as well as Hosting.

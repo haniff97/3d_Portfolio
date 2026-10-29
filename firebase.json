@@ -8,9 +8,34 @@
     ],
     "rewrites": [
       {
+        "source": "/api/**",
+        "function": {
+          "functionId": "portfolioChat",
+          "region": "asia-east1"
+        }
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
     ]
-  }
+  },
+  "functions": [
+    {
+      "source": ".firebase-functions",
+      "codebase": "portfolio-chat",
+      "runtime": "nodejs22",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".env",
+        ".env.*",
+        "*.test.js",
+        "*.log"
+      ],
+      "predeploy": [
+        "npm --prefix backend run prepare:firebase"
+      ]
+    }
+  ]
 }
