@@ -6,6 +6,7 @@ import projectEditor from './server/projectEditor.js';
 
 export default defineConfig({
   plugins: [react(), projectEditor(), profileEditor(), galleryEditor()],
+  server: { proxy: { '/api/chat': 'http://127.0.0.1:3001', '/api/health': 'http://127.0.0.1:3001' } },
   optimizeDeps: {
     include: [
       '@react-three/fiber',

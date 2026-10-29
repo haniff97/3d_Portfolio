@@ -39,8 +39,6 @@ function ProjectCards(props) {
             <Button
               variant="primary"
               href={props.blogLink}
-              target="_blank"
-              rel="noopener noreferrer"
               style={{
                 display: 'flex',
                 alignItems: 'center',

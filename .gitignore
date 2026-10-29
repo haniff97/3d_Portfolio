@@ -22,3 +22,30 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private backend configuration
+.env
+.env.*
+!.env.example
+
+# Private keys and credential files (never commit real credentials)
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+service-account*.json
+serviceAccount*.json
+*-firebase-adminsdk-*.json
+secrets/
+.secrets/
+
+# Local deployment state and generated reports
+.firebase/
+.vercel/
+.netlify/
+coverage/
+
+# Personal learning notes
+/agent.md

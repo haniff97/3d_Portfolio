@@ -1,11 +1,15 @@
-# React + Vite
+# Haniff Hamdan Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React/Vite portfolio with project management, a photo gallery, a shared Three.js ribbon background, and a DeepSeek-powered assistant on the About page. Content editors run locally; the public chatbot uses a separate Express backend.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+npm install
+npm run dev
+```
+
+Open the URL printed by Vite. To enable chat, start the backend in a separate terminal using the instructions below.
 
 ## Manage project cards locally
 
@@ -57,7 +61,7 @@ To recheck after future changes:
 2. Wait for the PDF to render, then click **About**, **Projects**, and **Home** to confirm the navbar remains usable.
 3. At a narrow viewport, open the mobile menu while the PDF is visible and navigate to another page.
 4. Check **Download PDF** and **Open PDF**, and confirm the preview fits the viewport.
-5. Click **Blog** from the navbar and **Read my blog** from About; both should reach the configured external article.
+5. Click **Blog** from the navbar and **Read my blog** from About; both should reach the configured blog homepage.
 6. Run `npm run build` before deploying.
 
 ## Edit profile content and personal photo
@@ -89,3 +93,29 @@ Commit `src/data/photos.json` and new files in `public/gallery-images/`, then bu
 ### Arrange project order
 
 In `/manage-projects`, use the up/down arrows beside each title. Each move saves immediately to `src/data/projects.json`, preserving any unsaved form edits. The Projects page and homepage carousel both follow this order. Commit the JSON file and deploy to publish the new order.
+
+## About-page AI chatbot
+
+
+The assistant answers questions about Haniff’s experience, projects and this portfolio. It uses DeepSeek through a private Express API. The browser calls `/api/chat`; the server adds public profile/project facts and cached blog excerpts and instructions before calling DeepSeek. It does not train a model or search the résumé PDF.
+
+1. In `backend/`, run `npm install`.
+2. Copy `.env.example` to `.env` only if `.env` does not already exist. Add your private `DEEPSEEK_API_KEY` and set `DEEPSEEK_MODEL=deepseek-flash`.
+3. Run `npm start` in `backend/`, alongside the frontend development server.
+4. Open `/about` and send a question. Restart the backend after changing its environment or prompt when using `npm start`.
+
+Never put the API key in a `VITE_` variable or commit `.env`. Static hosting of `dist/` alone does not run the chatbot; production also needs the backend and an `/api/` reverse proxy.
+
+The prompt asks for short, conversational answers, minimal dash punctuation, and redirects for unrelated questions. These are model instructions, not a guaranteed topic filter. Recent messages stay in React state and are sent with each request; this service does not persist chat history.
+
+- [Chatbot engineering guide](docs/CHATBOT_ENGINEERING.md): request flow, data grounding, tuning, restrictions, limitations and troubleshooting.
+- [Backend setup and deployment](backend/README.md): environment, API contract and reverse proxy configuration.
+- [Portfolio fixes and design decisions](docs/PORTFOLIO_FIXES.md): issues addressed and practical regression checks.
+
+Run `npm test --prefix backend` for backend HTTP tests with a mocked provider. These tests do not prove real model behavior; evaluate sample questions separately against the live API.
+
+New public blog posts are discovered from the homepage on the next chat request after the five-minute cache expires. The assistant receives up to four articles, with bounded excerpts. No manual portfolio rebuild is needed for blog updates. See the engineering guide for extraction limits.
+
+### Blog knowledge
+
+The chatbot also reads public blog articles automatically. It refreshes up to six posts linked from the blog homepage on the next question after a five-minute cache expires. No portfolio redeployment is needed for those blog updates. Older posts beyond this window and drafts are not included. See the engineering guide for the HTML scraper and its limits.

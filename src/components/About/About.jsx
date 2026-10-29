@@ -1,3 +1,4 @@
+import PortfolioChat from '../PortfolioChat';
 import { Link } from 'react-router-dom';
 import { FiArrowUpRight } from 'react-icons/fi';
 import profile from '../../data/profile.json';
@@ -22,9 +23,9 @@ export default function About() {
       <div className="about-prose">
         <h2>Hi, I’m {profile.name}.</h2>
         {profile.aboutBody.split(/\n\s*\n/).filter(Boolean).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
-        <div className="button-row"><Link to="/resume" className="button button-dark">View résumé <FiArrowUpRight /></Link><a href={BLOG_URL} className="text-link">Read my blog <FiArrowUpRight /></a></div>
+        <div className="button-row"><Link to="/resume" className="button button-dark">View résumé <FiArrowUpRight /></Link><Link to="/projects" className="text-link">Explore the projects <FiArrowUpRight /></Link><a href={BLOG_URL} className="text-link">Read my blog <FiArrowUpRight /></a></div>
       </div>
-      <div><aside className="about-note"><p className="eyebrow">WHAT I’M BUILDING</p><h2>Reliable systems.<br />Useful intelligence.<br />People in control.</h2><p>From HelmDeck, my internal homelab platform, to an edge-to-cloud IoT pipeline and a human-in-the-loop monitoring agent: independent projects that turn ideas into working systems.</p><Link to="/projects" className="text-link">Explore the projects <FiArrowUpRight /></Link></aside></div>
+      <div><PortfolioChat /></div>
     </div>
     <section className="career-section" aria-labelledby="experience-heading"><p className="eyebrow">THE JOURNEY SO FAR</p><h2 id="experience-heading">Experience</h2><div className="career-list">{experience.map(job => <article className="career-item" key={job.company}><time>{job.date}</time><div><h3>{job.role}</h3><p className="company">{job.company}</p><p>{job.description}</p></div></article>)}</div></section>
     <section className="skills-section" aria-labelledby="skills-heading"><p className="eyebrow">THE TOOLKIT</p><h2 id="skills-heading">Technologies I work with</h2>{toolkit.map(([category, skills]) => <div key={category}><h3>{category}</h3><div className="skill-tags">{skills.map(skill => <span key={skill}>{skill}</span>)}</div></div>)}</section>

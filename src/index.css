@@ -430,3 +430,73 @@ a:hover { color: #55506b; }
 .editor-order-controls button:hover:not(:disabled) { background: #e3dfeb; }
 .editor-order-controls button:disabled { opacity: .3; cursor: default; }
 .editor-list .reorder-hint { font-size: 12px; line-height: 1.6; }
+
+.gallery-upload-panel { display: flex; align-items: center; gap: 28px; margin: 36px 0 48px; padding: 38px; border: 1px solid #d2d0d8; border-radius: 24px; background: linear-gradient(115deg, #f7f6f0f5, #e6e1eff5); }
+.gallery-upload-symbol { display: grid; place-items: center; flex-shrink: 0; width: 76px; height: 76px; border: 1px solid #d7d1e0; border-radius: 22px; background: #ffffff80; color: #655b78; font-size: 32px; }
+.gallery-upload-copy { flex: 1; }
+.gallery-upload-copy .eyebrow { margin-bottom: 10px; font-size: 10px; }
+.gallery-upload-copy h2 { font-size: clamp(25px, 3vw, 34px); margin-bottom: 10px; }
+.gallery-upload-copy > p:not(.eyebrow) { font-size: 14px; color: #55565a; max-width: 44ch; }
+.gallery-upload-copy small { display: block; margin-top: 16px; font-size: 11px; color: #666371; }
+.gallery-upload-action { display: grid; gap: 12px; text-align: center; flex-shrink: 0; }
+.gallery-upload-action > span { color: #666371; font-size: 11px; }
+.gallery-file-button { position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 22px; border-radius: 30px; color: white; background: #24232a; cursor: pointer; font-size: 13px; }
+.gallery-file-button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.gallery-file-button:focus-within { outline: 3px solid #807294; outline-offset: 5px; }
+.gallery-file-button:hover { background: #57516c; }
+.gallery-file-button.is-disabled { opacity: .5; }
+.gallery-collection-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.gallery-collection-heading h2 { font-size: 24px; display: flex; align-items: center; gap: 12px; }
+.gallery-collection-heading h2 span { font: 12px ui-monospace, monospace; padding: 7px 11px; border-radius: 20px; background: #ded9e7; color: #57516c; }
+.gallery-collection-heading p { font-size: 12px; color: #666371; }
+.gallery-manager-card { overflow: hidden; border-radius: 16px; border: 1px solid #d5d7ce; background: #f6f6f0; }
+.gallery-manager-card > div { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; gap: 10px; }
+.gallery-manager-card > div > span { font: 10px ui-monospace, monospace; letter-spacing: .08em; color: #666371; }
+.gallery-manager-card button { display: inline-flex; align-items: center; gap: 7px; border: 0; background: transparent; font-size: 12px; padding: 8px; border-radius: 8px; color: #605c63; cursor: pointer; }
+.gallery-manager-card button:hover:not(:disabled) { background: #f1e0df; color: #8b3e38; }
+.gallery-manager-empty { padding: 45px 20px; text-align: center; color: var(--muted); }
+@media (max-width: 900px) { .gallery-upload-panel { flex-wrap: wrap; padding: 28px; } .gallery-upload-action { margin-left: 104px; } }
+@media (max-width: 550px) { .gallery-upload-panel { gap: 20px; padding: 24px; } .gallery-upload-symbol { width: 54px; height: 54px; font-size: 25px; border-radius: 16px; } .gallery-upload-copy { flex-basis: 100%; } .gallery-upload-action { margin-left: 0; width: 100%; } .gallery-collection-heading { align-items: flex-start; flex-direction: column; } }
+
+.portfolio-chat { padding: 28px; margin-bottom: 28px; border: 1px solid #d5d7ce; border-radius: 20px; background: #dfe1da; }
+.portfolio-chat-heading { display: flex; align-items: center; gap: 14px; }
+.chat-symbol { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: #252923; color: #fafbf6; font-size: 23px; flex-shrink: 0; }
+.portfolio-chat-heading .eyebrow { font-size: 9px; margin-bottom: 7px; }
+.portfolio-chat-heading h2 { font-size: 27px; }
+.chat-intro { margin: 18px 0; color: #565d52; font-size: 14px; }
+.chat-log { max-height: 360px; overflow-y: auto; overscroll-behavior: contain; }
+.chat-welcome, .chat-message { padding: 16px; background: #f6f7f1; border-radius: 14px; font-size: 14px; line-height: 1.7; }
+.chat-message { margin-bottom: 12px; }
+.chat-message > span { display: block; font-size: 10px; font-weight: 700; margin-bottom: 7px; color: #555e50; }
+.chat-message p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.chat-user { background: #cfd8c8; margin-left: 28px; }
+.chat-thinking { font-size: 13px; padding: 14px 0; color: #555e50; }
+.chat-suggestions { display: grid; gap: 8px; margin: 18px 0; }
+.chat-suggestions button { display: flex; align-items: center; justify-content: space-between; text-align: left; gap: 12px; padding: 11px 13px; border: 1px solid #bdc3b7; background: #e8ebe3; border-radius: 10px; font-size: 12px; cursor: pointer; }
+.chat-suggestions button:hover { background: #f5f7ef; }
+.chat-form { margin-top: 18px; }
+.chat-form label { display: block; font-size: 11px; margin-bottom: 8px; }
+.chat-form > div { display: flex; gap: 8px; }
+.chat-form input { width: 100%; min-width: 0; background: #fafbf7; border: 1px solid #b8c0b1; border-radius: 12px; padding: 13px; font-size: 14px; }
+.chat-form button { border: 0; border-radius: 12px; width: 46px; flex-shrink: 0; background: #252923; color: white; font-size: 22px; cursor: pointer; }
+.portfolio-chat button:disabled { opacity: .5; cursor: default; }
+.chat-error { padding: 12px; background: #f5e4df; color: #813e32; font-size: 13px; border-radius: 10px; margin-top: 12px; }
+.chat-footer { display: flex; gap: 12px; align-items: start; margin-top: 12px; }
+.chat-footer p { font-size: 10px; color: #596151; line-height: 1.6; }
+.chat-footer button { white-space: nowrap; border: 0; background: transparent; text-decoration: underline; font-size: 11px; cursor: pointer; }
+@media(max-width:550px) { .portfolio-chat { padding: 20px; } }
+
+.portfolio-chat { color: #252923; }
+.portfolio-chat-heading .eyebrow { color: #596151; }
+.chat-form input { color: #252923; }
+.chat-form input::placeholder { color: #697261; opacity: 1; }
+.chat-form button:disabled { background: #bfc6b8; color: #4c5546; opacity: 1; }
+.chat-form button:hover:not(:disabled) { background: #46513f; }
+.portfolio-chat :focus-visible { outline-color: #607253; }
+.chat-form input:focus-visible { outline: none; border-color: #607253; }
+
+.chat-form button { display: grid; place-items: center; align-self: center; width: 46px; height: 46px; padding: 0; line-height: 1; }
+.chat-form button svg { width: 19px; height: 19px; display: block; }
+
+.chat-suggestions button svg { width: 18px; height: 18px; stroke-width: 1.8; color: #555e50; }
+

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiUploadCloud, FiImage, FiTrash2, FiArrowUpRight } from 'react-icons/fi';
 
 export default function GalleryEditor() {
   const [data, setData] = useState(null);
@@ -41,7 +42,7 @@ export default function GalleryEditor() {
         completed++;
         setMessage(`Saved ${completed} of ${files.length} photos.`);
       }
-      setMessage(`Saved ${completed} photos. Deploy normally to publish your gallery.`);
+      setMessage(`Saved ${completed} ${completed === 1 ? 'photo' : 'photos'}. Deploy normally to publish your gallery.`);
     } catch (error) { setError(`${error.message} ${completed} photos were saved; the remaining photos were not uploaded.`); }
     finally { setBusy(false); }
   };
@@ -52,13 +53,19 @@ export default function GalleryEditor() {
     catch (error) { setError(error.message); }
     finally { setBusy(false); }
   };
-  return <section className="page-shell">
+  return <section className="page-shell gallery-manager">
     <p className="eyebrow">LOCAL EDITOR / GALLERY</p><h1>Manage photos<span className="accent-dot">.</span></h1>
     <p className="editor-intro">Upload multiple photos. The public gallery shows images only, without titles or captions.</p>
     <Link className="text-link" to="/personal-photo">← View gallery</Link>
     {error && <p className="editor-error" role="alert">{error}</p>}{message && <p className="editor-success" role="status">{message}</p>}
-    {data ? <><label className="gallery-upload">Add photos<input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy} onChange={upload} /><small>PNG, JPEG or WebP · up to 5 MB each · saves immediately</small></label>
-      <p role="status">{busy ? 'Saving… Please keep this page open.' : `${data.photos.length} photos`}</p>
-      <div className="gallery-editor-grid">{data.photos.map((photo, index) => <div key={photo.id}><img src={photo.src} alt={`Gallery photo ${index + 1}`} loading="lazy" /><button className="text-link" disabled={busy} onClick={() => remove(photo.id)}>Remove photo {index + 1}</button></div>)}</div></> : <p>{error ? 'Reload to try again.' : 'Loading photos…'}</p>}
+    {data ? <>
+      <div className="gallery-upload-panel" aria-busy={busy}>
+        <div className="gallery-upload-symbol"><FiUploadCloud aria-hidden="true" /></div>
+        <div className="gallery-upload-copy"><p className="eyebrow">A NEW PERSPECTIVE</p><h2>Add to your collection.</h2><p>Choose a few moments worth sharing. Upload one photo or several at once.</p><small>PNG, JPEG or WebP · up to 5 MB each</small></div>
+        <div className="gallery-upload-action"><label className={`gallery-file-button ${busy ? 'is-disabled' : ''}`}><input type="file" accept="image/png,image/jpeg,image/webp" multiple disabled={busy} onChange={upload} aria-label="Choose photos" /><FiImage aria-hidden="true" /><span>{busy ? 'Saving…' : 'Choose photos'}</span><FiArrowUpRight aria-hidden="true" /></label><span>Saves to your local project</span></div>
+      </div>
+      <div className="gallery-collection-heading"><h2>Your collection <span>{data.photos.length}</span></h2><p role="status">{busy ? 'Saving… Please keep this page open.' : 'Ready for your next upload'}</p></div>
+      {!data.photos.length && <p className="gallery-manager-empty">Your collection starts here. Add your first photo above.</p>}
+      <div className="gallery-editor-grid">{data.photos.map((photo, index) => <article className="gallery-manager-card" key={photo.id}><img src={photo.src} alt={`Gallery photo ${index + 1}`} loading="lazy" /><div><span>PHOTO {String(index + 1).padStart(2, '0')}</span><button type="button" disabled={busy} onClick={() => remove(photo.id)} aria-label={`Remove photo ${index + 1}`}><FiTrash2 aria-hidden="true" /> Remove</button></div></article>)}</div></> : <p>{error ? 'Reload to try again.' : 'Loading photos…'}</p>}
   </section>;
 }
